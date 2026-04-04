@@ -48,6 +48,9 @@
       pull = {
         rebase = false;
       };
+      push = {
+        autoSetupRemote = true;
+      };
       credential = {
         helper = "osxkeychain";
       };

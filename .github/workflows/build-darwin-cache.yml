@@ -46,6 +46,7 @@ jobs:
       #       extra-substituters = ${{ env.EXTRA_SUBSTITUTERS }}
       #       extra-trusted-public-keys = ${{ env.EXTRA_TRUSTED_PUBLIC_KEYS }}
 
+      # - uses: wimpysworld/nothing-but-nix@v10
       - uses: DeterminateSystems/nix-installer-action@main
       - uses: DeterminateSystems/magic-nix-cache-action@main
 
