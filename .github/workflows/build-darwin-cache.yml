@@ -48,6 +48,10 @@ jobs:
             extra-substituters = ${{ env.EXTRA_SUBSTITUTERS }}
             extra-trusted-public-keys = ${{ env.EXTRA_TRUSTED_PUBLIC_KEYS }}
 
+      # 如果没设置 CACHIX_AUTH_TOKEN，cachix push 静默失败，还不打印日志
+      - name: Require Cachix auth token
+        run: test -n "$CACHIX_AUTH_TOKEN"
+
       - name: Configure Cachix
         uses: cachix/cachix-action@v17
         with:
@@ -61,5 +65,3 @@ jobs:
 
       - name: Build darwin system
         run: nix build .#darwinConfigurations.Avalon.system
-
-      - run: nix path-info --all | cachix push zihan-type
