@@ -48,7 +48,7 @@ jobs:
 
       # - uses: wimpysworld/nothing-but-nix@v10
       - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@v13
 
       - name: Configure Cachix
         uses: cachix/cachix-action@v17
