@@ -48,7 +48,10 @@ jobs:
 
       # - uses: wimpysworld/nothing-but-nix@v10
       - uses: DeterminateSystems/nix-installer-action@main
+
       - uses: DeterminateSystems/magic-nix-cache-action@v13
+        with:
+          use-flakehub: false
 
       - name: Configure Cachix
         uses: cachix/cachix-action@v17
@@ -64,6 +67,6 @@ jobs:
       # - name: Build darwin system
       #   run: nix build .#darwinConfigurations.Avalon.system
 
-      - run: nix run nixpkgs#nh -- os build --no-nom -q .#darwinConfigurations.Avalon.system
+      - run: nix run nixpkgs#nh -- darwin build .#darwinConfigurations.Avalon.system
       - run: |
           echo "<code>$(readlink -f ./result)</code>" >> "$GITHUB_STEP_SUMMARY"
