@@ -61,5 +61,9 @@ jobs:
         run: |
           nix flake update
 
-      - name: Build darwin system
-        run: nix build .#darwinConfigurations.Avalon.system
+      # - name: Build darwin system
+      #   run: nix build .#darwinConfigurations.Avalon.system
+
+      - run: nix-shell --run 'nh os build --no-nom -q --file . darwinConfigurations.Avalon.system'
+      - run: |
+          echo "<code>$(readlink -f ./result)</code>" >> "$GITHUB_STEP_SUMMARY"
