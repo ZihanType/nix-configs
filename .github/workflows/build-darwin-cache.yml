@@ -67,6 +67,6 @@ jobs:
       # - name: Build darwin system
       #   run: nix build .#darwinConfigurations.Avalon.system
 
-      - run: nix run nixpkgs#nh -- darwin build .#darwinConfigurations.Avalon.system
+      - run: nix run nixpkgs#nh -- darwin build .#Avalon
       - run: |
           echo "<code>$(readlink -f ./result)</code>" >> "$GITHUB_STEP_SUMMARY"
