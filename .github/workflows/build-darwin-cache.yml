@@ -40,19 +40,13 @@ jobs:
 
       # - uses: wimpysworld/nothing-but-nix@v10
 
-      # - name: Install Nix
-      #   uses: cachix/install-nix-action@v31
-      #   with:
-      #     extra_nix_config: |
-      #       access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-      #       extra-substituters = ${{ env.EXTRA_SUBSTITUTERS }}
-      #       extra-trusted-public-keys = ${{ env.EXTRA_TRUSTED_PUBLIC_KEYS }}
-
-      - uses: DeterminateSystems/nix-installer-action@main
-
-      - uses: DeterminateSystems/magic-nix-cache-action@v13
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
         with:
-          use-flakehub: false
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            extra-substituters = ${{ env.EXTRA_SUBSTITUTERS }}
+            extra-trusted-public-keys = ${{ env.EXTRA_TRUSTED_PUBLIC_KEYS }}
 
       - name: Configure Cachix
         uses: cachix/cachix-action@v17
