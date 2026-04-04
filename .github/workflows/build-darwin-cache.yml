@@ -38,6 +38,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
+      # - uses: wimpysworld/nothing-but-nix@v10
+
       # - name: Install Nix
       #   uses: cachix/install-nix-action@v31
       #   with:
@@ -46,7 +48,6 @@ jobs:
       #       extra-substituters = ${{ env.EXTRA_SUBSTITUTERS }}
       #       extra-trusted-public-keys = ${{ env.EXTRA_TRUSTED_PUBLIC_KEYS }}
 
-      # - uses: wimpysworld/nothing-but-nix@v10
       - uses: DeterminateSystems/nix-installer-action@main
 
       - uses: DeterminateSystems/magic-nix-cache-action@v13
@@ -64,9 +65,5 @@ jobs:
         run: |
           nix flake update
 
-      # - name: Build darwin system
-      #   run: nix build .#darwinConfigurations.Avalon.system
-
-      - run: nix run nixpkgs#nh -- darwin build .#Avalon
-      - run: |
-          echo "<code>$(readlink -f ./result)</code>" >> "$GITHUB_STEP_SUMMARY"
+      - name: Build darwin system
+        run: nix build .#darwinConfigurations.Avalon.system
