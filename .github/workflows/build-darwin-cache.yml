@@ -61,3 +61,5 @@ jobs:
 
       - name: Build darwin system
         run: nix build .#darwinConfigurations.Avalon.system
+
+      - run: nix path-info --all | cachix push zihan-type
