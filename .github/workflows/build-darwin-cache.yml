@@ -1,0 +1,64 @@
+name: build-darwin-cache
+
+on:
+  push:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+    inputs:
+      prewarm:
+        description: Temporarily run nix flake update before building
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: build-darwin-cache-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-avalon:
+    runs-on: macos-26
+    permissions:
+      contents: read
+    env:
+      CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
+      EXTRA_SUBSTITUTERS: >-
+        https://zihan-type.cachix.org
+        https://cache.numtide.com
+        https://nix-community.cachix.org
+        https://devenv.cachix.org
+      EXTRA_TRUSTED_PUBLIC_KEYS: >-
+        zihan-type.cachix.org-1:Et3+mUASnAGou+mo4Ei1jdQDUWI/UnlF1k3xvxnJzIo=
+        niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g=
+        nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
+        devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      # - name: Install Nix
+      #   uses: cachix/install-nix-action@v31
+      #   with:
+      #     extra_nix_config: |
+      #       access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+      #       extra-substituters = ${{ env.EXTRA_SUBSTITUTERS }}
+      #       extra-trusted-public-keys = ${{ env.EXTRA_TRUSTED_PUBLIC_KEYS }}
+
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: Configure Cachix
+        uses: cachix/cachix-action@v17
+        with:
+          name: zihan-type
+          authToken: ${{ env.CACHIX_AUTH_TOKEN }}
+
+      - name: Temporarily update flake.lock for prewarm builds
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.prewarm) }}
+        run: |
+          nix flake update
+
+      - name: Build darwin system
+        run: nix build .#darwinConfigurations.Avalon.system

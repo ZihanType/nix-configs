@@ -1,0 +1,70 @@
+{
+  "servers": {
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "gallery": true
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": ["@playwright/mcp@latest"],
+      "gallery": true
+    },
+    "context7": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": ["-y", "@upstash/context7-mcp"],
+      "gallery": true
+    },
+    "memory": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "gallery": true
+    },
+    "imagesorcery": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["imagesorcery-mcp"],
+      "gallery": true
+    },
+    "sequentialthinking": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking@latest"],
+      "gallery": true
+    },
+    "awesome-copilot": {
+      "type": "stdio",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--pull=always",
+        "ghcr.io/microsoft/mcp-dotnet-samples/awesome-copilot:latest"
+      ]
+    },
+    "fetch": {
+      "command": "uvx",
+      "args": ["mcp-server-fetch"],
+      "type": "stdio"
+    },
+    "git": {
+      "command": "uvx",
+      "args": ["mcp-server-git"],
+      "type": "stdio"
+    },
+    "time": {
+      "command": "uvx",
+      "args": ["mcp-server-time"],
+      "type": "stdio"
+    },
+    "nixos": {
+      "command": "uvx",
+      "args": ["mcp-nixos"]
+    }
+  },
+  "inputs": []
+}

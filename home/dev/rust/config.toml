@@ -1,0 +1,36 @@
+[unstable]
+# 让 Cargo 更新已使用文件的修改时间
+mtime-on-use = true
+# 允许使用新的命令行标志、选项和子命令
+unstable-options = true
+# 依赖项必须标记为“public”才能成为公开API的一部分
+# public-dependency = true
+# 启用与 cargo 主目录中 cargo 全局缓存的垃圾回收相关的某些功能
+gc = true
+# 减少编译产物大小，不影响二进制文件大小
+no-embed-metadata = true
+# 指示 rustc 生成各个编译阶段的耗时信息
+section-timings = true
+# 更好的 rustc 错误信息
+rustc-unicode = true
+# 允许使用配置文件选择 rustc 使用的代码生成后端
+codegen-backend = true
+# 启用新的构建目录文件系统布局
+build-dir-new-layout = true
+
+[net]
+git-fetch-with-cli = true
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.dev.build-override]
+opt-level = 3
+codegen-units = 1
+
+[profile.release]
+strip = "symbols"
+# overflow-checks = true
+lto = "fat"
+panic = "abort"
+codegen-units = 1

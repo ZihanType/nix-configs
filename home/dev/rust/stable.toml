@@ -1,0 +1,8 @@
+[toolchain]
+channel = "stable"
+profile = "default"
+components = [
+    "rust-src",
+    # "llvm-tools",
+]
+# targets = ["wasm32-unknown-unknown"]

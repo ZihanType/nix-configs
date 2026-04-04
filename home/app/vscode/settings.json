@@ -1,0 +1,229 @@
+{
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "off"
+  },
+  "[nix]": {
+    "editor.formatOnSave": true
+  },
+  "[rust]": {
+    "editor.formatOnSave": true
+  },
+  "[toml]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "chat.agent.enabled": true,
+  "chat.customAgentInSubagent.enabled": true,
+  "chat.editor.fontFamily": "'JetBrainsMono Nerd Font Mono'",
+  "chat.edits2.enabled": true,
+  "chat.fontFamily": "'JetBrainsMono Nerd Font Mono'",
+  "chat.mcp.gallery.enabled": true,
+  "chat.useNestedAgentsMdFiles": true,
+  "claudeCode.environmentVariables": [
+    {
+      "name": "ANTHROPIC_BASE_URL",
+      "value": "http://localhost:1234"
+    },
+    {
+      "name": "ANTHROPIC_AUTH_TOKEN",
+      "value": "lmstudio"
+    }
+  ],
+  "debug.breakpointsView.presentation": "tree",
+  "debug.console.fontFamily": "'JetBrainsMono Nerd Font Mono'",
+  "debug.showVariableTypes": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.codeLensFontFamily": "'JetBrainsMono Nerd Font Mono'",
+  "editor.detectIndentation": false,
+  "editor.foldingMaximumRegions": 10000,
+  "editor.fontFamily": "'JetBrainsMono Nerd Font Mono'",
+  "editor.fontSize": 20,
+  "editor.guides.bracketPairs": true,
+  "editor.guides.highlightActiveBracketPair": false,
+  "editor.inlineSuggest.edits.showCollapsed": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.fontFamily": "'JetBrainsMono Nerd Font Mono'",
+  "editor.largeFileOptimizations": false,
+  "editor.linkedEditing": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "rules": {
+      "*.unsafe:rust": "#eb5046"
+    }
+  },
+  "editor.suggest.insertMode": "replace",
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "emmet.triggerExpansionOnTab": true,
+  "errorLens.fontFamily": "'JetBrainsMono Nerd Font Mono'",
+  "evenBetterToml.taplo.bundled": false,
+  "explorer.autoOpenDroppedFile": false,
+  "explorer.autoReveal": "focusNoScroll",
+  "explorer.compactFolders": false,
+  "explorer.confirmUndo": "verbose",
+  "explorer.incrementalNaming": "disabled",
+  "extensions.ignoreRecommendations": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "files.autoGuessEncoding": true,
+  "files.trimTrailingWhitespace": true,
+  "git.verboseCommit": true,
+  "github.copilot.chat.agent.largeToolResultsToDisk.enabled": true,
+  "github.copilot.chat.agentCustomizationSkill.enabled": true,
+  "github.copilot.chat.anthropic.contextEditing.enabled": true,
+  "github.copilot.chat.cli.mcp.enabled": true,
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.copilotMemory.enabled": true,
+  "github.copilot.chat.implementAgent.model": "Claude Sonnet 4.5 (copilot)",
+  "github.copilot.chat.newWorkspace.useContext7": true,
+  "github.copilot.chat.searchSubagent.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "plaintext": true,
+    "scminput": true
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.nextEditSuggestions.fixes": true,
+  "inlineChat.defaultModel": "Claude Sonnet 4.5 (copilot)",
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "json.maxItemsComputed": 20000,
+  "markdown.occurrencesHighlight.enabled": true,
+  "markdown.preview.fontFamily": "'JetBrainsMono Nerd Font Mono'",
+  "markdown.updateLinksOnFileMove.enabled": "always",
+  "markdown.validate.enabled": true,
+  "material-icon-theme.folders.theme": "classic",
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nixd",
+  "nix.serverSettings": {
+    // check https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md for all nixd config
+    "nixd": {
+      "formatting": {
+        "command": ["nixfmt"]
+      },
+      "nixpkgs": {
+        "expr": "import (builtins.getFlake \"/private/etc/nix-darwin\").inputs.nixpkgs { }   "
+      },
+      "options": {
+        "nix-darwin": {
+          "expr": "(builtins.getFlake \"/private/etc/nix-darwin\").darwinConfigurations.\"Avalon\".options"
+        },
+        "home-manager": {
+          "expr": "(builtins.getFlake \"/private/etc/nix-darwin\").darwinConfigurations.\"Avalon\".options.home-manager.users.type.getSubOptions []"
+        }
+      }
+    }
+  },
+  "notebook.markup.fontFamily": "'JetBrainsMono Nerd Font Mono'",
+  "python.languageServer": "None",
+  "remote.autoForwardPorts": false,
+  "rust-analyzer.assist.emitMustUse": true,
+  "rust-analyzer.assist.preferSelf": true,
+  "rust-analyzer.cargo.targetDir": "/Volumes/ramdisk/target",
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.check.workspace": false,
+  "rust-analyzer.completion.fullFunctionSignatures.enable": true,
+  "rust-analyzer.diagnostics.styleLints.enable": true,
+  "rust-analyzer.hover.actions.references.enable": true,
+  "rust-analyzer.hover.documentation.keywords.enable": false,
+  "rust-analyzer.imports.granularity.enforce": true,
+  "rust-analyzer.imports.merge.glob": false,
+  "rust-analyzer.imports.prefix": "self",
+  "rust-analyzer.initializeStopped": true,
+  "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
+  "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
+  "rust-analyzer.inlayHints.typeHints.hideInferredTypes": true,
+  "rust-analyzer.lens.references.adt.enable": true,
+  "rust-analyzer.lens.references.enumVariant.enable": true,
+  "rust-analyzer.lens.references.method.enable": true,
+  "rust-analyzer.lens.references.trait.enable": true,
+  "rust-analyzer.restartServerOnConfigChange": true,
+  "rust-analyzer.server.extraEnv": {
+    "DYLD_FALLBACK_LIBRARY_PATH": "/Library/Developer/CommandLineTools/usr/lib",
+    "LD_LIBRARY_PATH": "${LD_LIBRARY_PATH}:/usr/local/lib",
+    "LDFLAGS": "-L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib"
+  },
+  "rust-analyzer.statusBar.clickAction": "stopServer",
+  "rust-analyzer.testExplorer": true,
+  "scm.defaultViewMode": "tree",
+  "scm.inputFontFamily": "'JetBrainsMono Nerd Font Mono'",
+  "search.showLineNumbers": true,
+  "simpleBrowser.useIntegratedBrowser": true,
+  "tailwindCSS.includeLanguages": {
+    "rust": "html"
+  },
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.enableKittyKeyboardProtocol": true,
+  "terminal.integrated.fontSize": 20,
+  "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.suggest.enabled": true,
+  "ty.diagnosticMode": "workspace",
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "update.mode": "none",
+  "update.showReleaseNotes": false,
+  "vue.inlayHints.destructuredProps": true,
+  "vue.inlayHints.inlineHandlerLeading": true,
+  "vue.inlayHints.missingProps": true,
+  "vue.inlayHints.vBindShorthand": true,
+  "window.customTitleBarVisibility": "never",
+  "window.menuStyle": "custom",
+  "window.nativeTabs": true,
+  "window.restoreFullscreen": true,
+  "workbench.browser.openLocalhostLinks": true,
+  "workbench.editor.customLabels.patterns": {
+    "**/build.rs": "${dirname}/build.rs",
+    "**/Cargo.toml": "${dirname}/Cargo.toml",
+    "**/mod.rs": "${dirname}/mod.rs",
+    "*/*/**/bin.rs": "${dirname(1)}/bin.rs",
+    "*/*/**/lib.rs": "${dirname(1)}/lib.rs",
+    "*/*/**/main.rs": "${dirname(1)}/main.rs"
+  },
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.editor.showTabIndex": true,
+  "workbench.editor.swipeToNavigate": true,
+  "workbench.editor.titleScrollbarVisibility": "visible",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.list.horizontalScrolling": true,
+  "workbench.settings.alwaysShowAdvancedSettings": true,
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 16,
+  "workbench.view.alwaysShowHeaderActions": true
+}
