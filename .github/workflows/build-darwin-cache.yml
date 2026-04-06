@@ -3,7 +3,7 @@ name: build-darwin-cache
 on:
   push:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 */2 * * *"
   workflow_dispatch:
     inputs:
       prewarm:
@@ -61,8 +61,7 @@ jobs:
 
       - name: Temporarily update flake.lock for prewarm builds
         if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.prewarm) }}
-        run: |
-          nix flake update
+        run: nix flake update
 
       - name: Build darwin system
         run: nix build .#darwinConfigurations.Avalon.system
