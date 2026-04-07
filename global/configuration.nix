@@ -67,6 +67,7 @@
       (openspec.override {
         nodejs_20 = nodejs_25;
       })
+      skills
     ];
 
     shells = with pkgs; [

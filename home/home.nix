@@ -20,6 +20,7 @@
     ./app/ghostty.nix
     ./app/git.nix
     ./app/gradle.nix
+    ./app/lark-cli.nix
     ./app/nh.nix
     ./app/opencode.nix
     ./app/ripgrep.nix
