@@ -86,6 +86,9 @@
         overlays = [
           # nix4vscode.overlays.default
           fenix.overlays.default
+          (final: prev: {
+            larkCli = prev.callPackage ./pkgs/lark-cli.nix { };
+          })
         ];
       };
     in
