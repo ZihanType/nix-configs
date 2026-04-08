@@ -8,7 +8,7 @@
   home.packages = [
     (pkgs.fenix.fromToolchainFile {
       file = ./nightly.toml;
-      sha256 = "bolWw9A8sBZf3JDd7F/OMZgQelmuAuGO7ng2HSSEDIg=";
+      sha256 = "GmFvBozZrJXJ+LCX5yah1T3oRhOnwJoQmWuKnVh97Tk=";
     })
   ];
 }
