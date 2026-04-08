@@ -16,7 +16,7 @@
 
     # dev
     ./dev/direnv.nix
-    ./dev/opencv.nix
+    ./dev/dev-env-vars.nix
     # ./dev/xcode.nix
 
     # launchd
