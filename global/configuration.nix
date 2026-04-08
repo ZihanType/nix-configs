@@ -61,6 +61,7 @@
       fresh-editor
       gdu
       actionlint
+      feishu-cli
 
       # AI
       github-copilot-cli
