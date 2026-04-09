@@ -1,11 +1,4 @@
 {
-  config,
-  ...
-}:
-let
-  logDir = "${config.xdg.stateHome}/atuin/logs";
-in
-{
   programs.atuin = {
     enable = true;
     enableFishIntegration = true;
@@ -19,10 +12,6 @@ in
       # search_mode = "prefix";
 
       enter_accept = true;
-
-      logs = {
-        dir = logDir;
-      };
     };
   };
 }

@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  homeDir = config.home.homeDirectory;
+  binDir = "${config.home.homeDirectory}/bin";
 in
 {
   xdg.enable = true;
@@ -9,12 +9,12 @@ in
     preferXdgDirectories = true;
 
     sessionVariables = {
-      XDG_BIN_HOME = "${homeDir}/bin";
+      XDG_BIN_HOME = "${binDir}";
 
       ANDROID_USER_HOME = "${config.xdg.dataHome}/android";
       LESSHISTFILE = "${config.xdg.stateHome}/lesshst";
     };
 
-    sessionPath = [ "${homeDir}/bin" ];
+    sessionPath = [ "${binDir}" ];
   };
 }
