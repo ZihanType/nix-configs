@@ -69,6 +69,7 @@
       "yaak"
       "tencent-lemon"
       "visual-studio-code"
+      "instant-space-switcher"
     ];
   };
 }

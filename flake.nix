@@ -35,6 +35,11 @@
       flake = false;
     };
 
+    jurplel = {
+      url = "github:jurplel/homebrew-tap";
+      flake = false;
+    };
+
     # 仓库大，不止有最新的插件
     # nix4vscode = {
     #   url = "github:nix-community/nix4vscode";
@@ -68,6 +73,7 @@
       homebrew-core,
       homebrew-cask,
       zihantype,
+      jurplel,
       # nix4vscode,
       fenix,
       ...
@@ -117,6 +123,7 @@
                   "homebrew/homebrew-core" = homebrew-core;
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "zihan-type/homebrew-tap" = zihantype;
+                  "jurplel/homebrew-tap" = jurplel;
                 };
 
                 mutableTaps = false;

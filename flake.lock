@@ -25,11 +25,11 @@
         "rust-analyzer-src": "rust-analyzer-src"
       },
       "locked": {
-        "lastModified": 1775721346,
-        "narHash": "sha256-ogqjruvVBYEj8sWM3viOucSo1Pna9c147EKQOfA+p3I=",
+        "lastModified": 1775807984,
+        "narHash": "sha256-Redoe3D9zGN5I9QPHWL9vfMVQBehY1fKsMiRXQ83X3w=",
         "owner": "nix-community",
         "repo": "fenix",
-        "rev": "99fde43dfee2a672e4e37ef211e0844337e5b725",
+        "rev": "fcf90c0c4d368b2ca917a7afa6d08e98a397e5fd",
         "type": "github"
       },
       "original": {
@@ -79,11 +79,11 @@
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1775785083,
-        "narHash": "sha256-ByHyVwTcXwO3lMnaCOVzqZiX8BkW7HiUExnt3nJ+xOo=",
+        "lastModified": 1775816263,
+        "narHash": "sha256-+iz7SI4g6XXz9RWk2DPhhpNaf//BVEPZT60hR7xQIms=",
         "owner": "homebrew",
         "repo": "homebrew-cask",
-        "rev": "8aa570ebbb973c312ef44121f46fa8dd0727b4e1",
+        "rev": "c465fb5e33fcc8db4cda65c70caf663f4971014e",
         "type": "github"
       },
       "original": {
@@ -95,16 +95,32 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1775783578,
-        "narHash": "sha256-oaaf0FoR2D2iLlhppQF++6TE90KIBL3HOuTb9LH3rH0=",
+        "lastModified": 1775814921,
+        "narHash": "sha256-rCVRHEUjbH/ajbj6/9MitgZw0HBd2SBeJ//wB5Hp/Tw=",
         "owner": "homebrew",
         "repo": "homebrew-core",
-        "rev": "85051976253c53c61bf489d1ffa80adc370d290c",
+        "rev": "7103fc93f7d00922fda7c7f713e120efa4004f30",
         "type": "github"
       },
       "original": {
         "owner": "homebrew",
         "repo": "homebrew-core",
+        "type": "github"
+      }
+    },
+    "jurplel": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1775812108,
+        "narHash": "sha256-3KRyoc2BV/IhUciFvOH9VC40+FwQCJlpRzJ5B+eFJq0=",
+        "owner": "jurplel",
+        "repo": "homebrew-tap",
+        "rev": "259dd8387ef1b05dcd3507f08b88ed91d2b51e61",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jurplel",
+        "repo": "homebrew-tap",
         "type": "github"
       }
     },
@@ -169,6 +185,7 @@
         "home-manager": "home-manager",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
+        "jurplel": "jurplel",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs",
@@ -178,11 +195,11 @@
     "rust-analyzer-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1775663707,
-        "narHash": "sha256-3cSvpBETRa8aDSrUCX1jGc6FSse3OWB7cXACIZW8BYI=",
+        "lastModified": 1775745684,
+        "narHash": "sha256-8MbfLwd60FNa8dRFkjE+G3TT/x21G3Rsplm1bMBQUtU=",
         "owner": "rust-lang",
         "repo": "rust-analyzer",
-        "rev": "8c5af725817905e462052d91a8d229b85ffa83a5",
+        "rev": "64ddb549bc9a70d011328746fa46a8883f937b6b",
         "type": "github"
       },
       "original": {
