@@ -5,7 +5,6 @@
 }:
 let
   globalDir = "${config.xdg.cacheHome}/.bun/install/global";
-  globalBinDir = config.home.sessionVariables.XDG_BIN_HOME;
 
   bunWithNodeAlias = pkgs.symlinkJoin {
     name = "bun-as-node";
@@ -29,7 +28,7 @@ in
       };
       install = {
         registry = "https://registry.npmmirror.com";
-        globalBinDir = globalBinDir;
+        globalBinDir = config.xdg.binHome;
         linker = "isolated";
         linkWorkspacePackages = false;
       };
